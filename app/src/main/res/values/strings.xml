@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">finalProject</string>
+    <string name="txtLogin">Login</string>
+    <string name="txtPassword">Password</string>
+    <string name="hintLogin">Please enter a username.</string>
+    <string name="txtButton">Login</string>
+    <string name="errMessageLogin">Invalid Login. Please retry.</string>
+    <string name="errMessagePassword">Invalid Password. Please retry.</string>
+
+    <string name="txtLocationName">Location Name</string>
+    <string-array name="lstType">
+        <item>Home</item>
+        <item>Work</item>
+        <item>School</item>
+        <item>Grocery</item>
+        <item>Restaurant</item>
+        <item>Gas Station</item>
+        <item>Hospital</item>
+    </string-array>
+    <string name="txtAddress">Address</string>
+    <string name="txtDate">Date</string>
+    <string name="txtTime">Time</string>
+    <string name="txtButton2">See on Map</string>
+    <string name="title_activity_third">Map</string>
+    <string name="google_maps_key"></string>AIzaSyBPNfPW_zX2DabkBksKaR1Yn2L4eTjdnF4
+</resources>
