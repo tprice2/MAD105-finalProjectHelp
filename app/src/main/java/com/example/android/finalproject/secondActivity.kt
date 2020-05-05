@@ -27,7 +27,6 @@ class secondActivity : AppCompatActivity() {
                 nextScreen.putExtra("Address", chosenAddress.text.toString())
                 nextScreen.putExtra("Date", chosenDate.text.toString())
                 nextScreen.putExtra("Time", chosenTime.text.toString())
-
                 //Start Activity
             startActivity(nextScreen)
             }
