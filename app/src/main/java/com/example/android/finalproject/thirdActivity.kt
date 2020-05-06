@@ -3,6 +3,7 @@ package com.example.android.finalproject
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -24,15 +25,6 @@ class thirdActivity : AppCompatActivity(), OnMapReadyCallback {
         val mapFragment = supportFragmentManager
             .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
-
-        //val extras = intent.extras
-
-        //if(extras != null){
-        //    var address = extras.getString("Address")
-        //    val txtAddress = findViewById(R.id.idAddress) as TextView
-        //    val searchAddress = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=$txtAddress"))
-        //    startActivity(searchAddress)
-        //}
     }
 
     /**
@@ -44,17 +36,21 @@ class thirdActivity : AppCompatActivity(), OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
-   var address = "perth"
+   //var address = "perth"
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
 
-        // Add a marker in Sydney and move the camera
-        val sydney = LatLng(-34.0, 151.0)
-        val searchAddress = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=$address"))
-        mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
-        startActivity(searchAddress)
+        val extras = intent.extras
 
+        if(extras != null){
+            val address = extras.getString("Address")
+            // Add a marker in Sydney and move the camera
+            val sydney = LatLng(-34.0, 151.0)
+            val searchAddress = Intent(Intent.ACTION_VIEW, Uri.parse("geo:0,0?q=$address"))
+            mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
+            mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))
+            startActivity(searchAddress)
+        }
     }
 
 }
